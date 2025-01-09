@@ -157,7 +157,7 @@ endif
 #
 ifeq ($(CONFIG_LLVM_COV_KERNEL),y)
 _c_flags += $(if $(patsubst n%,, \
-		$(LLVM_COV_PROFILE_$(target-stem).o)$(LLVM_COV_PROFILE)$(if $(is-kernel-object),$(CONFIG_LLVM_COV_PROFILE_ALL))), \
+		$(LLVM_COV_PROFILE_$(basetarget).o)$(LLVM_COV_PROFILE)$(CONFIG_LLVM_COV_PROFILE_ALL)), \
 		$(CFLAGS_LLVM_COV))
 endif
 
@@ -169,7 +169,7 @@ endif
 #
 ifeq ($(CONFIG_LLVM_COV_KERNEL_MCDC),y)
 _c_flags += $(if $(patsubst n%,, \
-		$(LLVM_COV_PROFILE_$(target-stem).o)$(LLVM_COV_PROFILE)$(if $(is-kernel-object),$(CONFIG_LLVM_COV_PROFILE_ALL))), \
+		$(LLVM_COV_PROFILE_$(basetarget).o)$(LLVM_COV_PROFILE)$(CONFIG_LLVM_COV_PROFILE_ALL)), \
 		$(CFLAGS_LLVM_COV_MCDC))
 endif
 
