@@ -315,6 +315,11 @@
 #define THERMAL_TABLE(name)
 #endif
 
+#define BOUNDED_SECTION_POST_LABEL(_sec_, _label_, _BEGIN_, _END_)	\
+	_label_##_BEGIN_ = .;						\
+	KEEP(*(_sec_))							\
+	_label_##_END_ = .;
+
 #ifdef CONFIG_LLVM_COV_KERNEL
 #define LLVM_COV_DATA							\
 	__llvm_prf_data : AT(ADDR(__llvm_prf_data) - LOAD_OFFSET) {	\
