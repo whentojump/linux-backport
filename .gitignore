@@ -183,3 +183,9 @@ sphinx_*/
 
 # Rust analyzer configuration
 /rust-project.json
+
+*.profraw
+*.profdata
+build.log
+html-reports
+text-reports
