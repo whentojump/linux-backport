@@ -189,3 +189,7 @@ sphinx_*/
 build.log
 html-reports
 text-reports
+
+lcov
+gcov-reports
+kernel.lcov.info

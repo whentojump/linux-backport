@@ -808,7 +808,7 @@ CFLAGS_LLVM_COV_MCDC += -Xclang -fmcdc-max-conditions=$(CONFIG_LLVM_COV_KERNEL_M
 endif
 export CFLAGS_LLVM_COV_MCDC
 
-CFLAGS_GCOV	:= -fprofile-arcs -ftest-coverage
+CFLAGS_GCOV	:= -fprofile-arcs -ftest-coverage -fcondition-coverage
 ifdef CONFIG_CC_IS_GCC
 CFLAGS_GCOV	+= -fno-tree-loop-im
 endif
